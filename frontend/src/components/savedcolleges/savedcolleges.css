@@ -1,0 +1,38 @@
+.saved-colleges-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.saved-colleges-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.colleges-list {
+    list-style: none;
+    padding: 0;
+}
+
+.college-item {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 5px solid #007bff;
+}
+
+.college-item h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #007bff;
+}
+
+.college-item p {
+    margin: 5px 0 0;
+    color: #555;
+} 

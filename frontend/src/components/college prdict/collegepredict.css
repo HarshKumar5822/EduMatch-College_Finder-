@@ -1,0 +1,539 @@
+/* Modern College Predictor Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: auto;
+    min-height: 100%;
+    overflow-y: auto;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: #333;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.college-predictor {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #36b3e8 0%, #3ec6e0 100%);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.main-container, .form-section {
+    display: block !important;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    background: none;
+}
+
+.centered-page {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: linear-gradient(135deg, #36b3e8 0%, #3ec6e0 100%);
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+.form-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2.5rem 2.5rem;
+    min-width: 350px;
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-card h2,
+.form-card label,
+.form-card input,
+.form-card select,
+.form-card button,
+.form-card .error-message {
+    text-align: center;
+    width: 100%;
+}
+
+.form-header,
+.header {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+input, select, button {
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #ee7752;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(238, 119, 82, 0.1);
+}
+
+.rank-info {
+    margin-top: 10px;
+}
+
+.rank-category {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rank-category.excellent {
+    background: linear-gradient(45deg, #00c851, #007e33);
+    color: white;
+}
+
+.rank-category.very-good {
+    background: linear-gradient(45deg, #33b5e5, #0099cc);
+    color: white;
+}
+
+.rank-category.good {
+    background: linear-gradient(45deg, #ffbb33, #ff8800);
+    color: white;
+}
+
+.rank-category.average {
+    background: linear-gradient(45deg, #ff4444, #cc0000);
+    color: white;
+}
+
+.rank-category.below-average {
+    background: linear-gradient(45deg, #9933cc, #660099);
+    color: white;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(238, 119, 82, 0.3);
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.progress-container {
+    margin-top: 15px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e1e5e9;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-container p {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.error-message {
+    background: #ffe6e6;
+    color: #d63031;
+    padding: 12px;
+    border-radius: 12px;
+    margin-top: 15px;
+    border-left: 4px solid #d63031;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Results Section */
+.results-section {
+    width: 100vw;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2vw;
+}
+
+.results-header {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.results-header h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.results-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.colleges-grid {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 0 2vw;
+    overflow-y: auto;
+}
+
+.college-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 2rem 2.5rem;
+    width: 370px;
+    height: 400px;
+    max-width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.college-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.college-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.college-header h3 {
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 600;
+    flex: 1;
+    margin-right: 15px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.star {
+    color: #ddd;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.star.filled {
+    color: #ffd700;
+}
+
+.rating-text {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.college-details {
+    flex: 1 1 auto;
+    overflow: hidden;
+}
+
+.college-details p {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.college-description {
+    font-style: italic;
+    color: #666 !important;
+    font-size: 0.9rem !important;
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(238, 119, 82, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #ee7752;
+}
+
+.college-actions {
+    flex-shrink: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-primary,
+.btn-secondary {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(238, 119, 82, 0.3);
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: #ee7752;
+    border: 2px solid #ee7752;
+}
+
+.btn-secondary:hover {
+    background: #ee7752;
+    color: white;
+}
+
+.stats-section {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 30px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.stat-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .college-predictor {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .form-card,
+    .results-header {
+        padding: 20px;
+    }
+    
+    .colleges-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .college-actions {
+        flex-direction: column;
+    }
+    
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .header p {
+        font-size: 1rem;
+    }
+    
+    .form-card h2,
+    .results-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .college-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .rating {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 900px) {
+    .college-card {
+        width: 90vw;
+        min-width: 220px;
+        max-width: 98vw;
+    }
+    .colleges-grid {
+        justify-content: center;
+    }
+}
+
+/* Optional: Make navbar sticky if you have a .navbar class */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+}
